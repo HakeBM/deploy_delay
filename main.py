@@ -20,5 +20,5 @@ def predict_delay(flight : FlightInput):
   return{
 "delay _prediction": predict, 
 "delay_probability": round(float(prob),3),
-"treshold_used" : TRHESHOLD
+"treshold_used" : THRESHOLD
 }
