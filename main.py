@@ -1,17 +1,17 @@
 from fastapi import FastAPI
 import joblib
 import pandas as pd
-from app.schemas import FlightInput
+from schemas import FlightInput
 
 app= FastAPI(tittle="Predictor Delay API",
-description= "Predictor of delays on flights whit ML"
+description= "Predictor of delays on flights whit ML",
 version= "0.0.1"
 )
-model= joblib.load('/content/ml_service/app/model/predictor_delay.pkl')
+model= joblib.load('predictor_delay.pkl')
 THRESHOLD =0.4
 @app.get("/")
 def home():
-  return("status":"API EN FUNCIONAMIENTO 🎉🎊")
+  return{"status":"API EN FUNCIONAMIENTO 🎉🎊"}
 @get.post("/predict")
 def predict_delay(flight : FlightInput):
   x= pd.DataFrame([flight.dict()])
