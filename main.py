@@ -16,7 +16,7 @@ def home():
 def predict_delay(flight : FlightInput):
   x= pd.DataFrame([flight.dict()])
   prob= model.predict_proba(x)[0][1]
-  predict= int(proba>=THRESHOLD)
+  predict= int(prob>=THRESHOLD)
   return{
 "delay _prediction": predict, 
 "delay_probability": round(float(prob),3),
