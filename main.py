@@ -12,7 +12,7 @@ THRESHOLD =0.4
 @app.get("/")
 def home():
   return{"status":"API EN FUNCIONAMIENTO 🎉🎊"}
-@get.post("/predict")
+@app.post("/predict")
 def predict_delay(flight : FlightInput):
   x= pd.DataFrame([flight.dict()])
   prob= model.predict_proba(x)[0][1]
