@@ -25,7 +25,7 @@ app = FastAPI(
     version="0.0.1"
 )
 
-model = joblib.load(model_gb)
+model = joblib.load(model_xgb)
 
 @app.get("/")
 def home():
