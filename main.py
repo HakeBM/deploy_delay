@@ -1,5 +1,4 @@
 from fastapi import FastAPI,UploadFile,File,HTTPException, Depends
-from fastapi.response import JSONResponse
 import joblib
 import pandas as pd
 import numpy as np
