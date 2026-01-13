@@ -37,7 +37,7 @@ def predict_delay(flight : FlightInput):
 "delay _prediction": int(result.delay_prediction), 
 "delay_probability": float(result.delay_probability),
 }
-@app.post ("/batch-predict")
+@app.post("/batch-predict")
 def predict_batch (file: UploadFile=File(...)):
   if not file.filename.endswith(".csv"):
     raise HTTPException (400,"El archivo debe ser csv")
