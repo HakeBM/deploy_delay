@@ -9,7 +9,7 @@ from contextlib import asynccontextmanager
 from schemas import FlightInput
 
 model_in_use = "predictor_delay.pkl"
-model_xgb= "model_xgb_complete.pkl"
+model_xgb= "model_xgb_complete_.pkl"
 model_gb= "model_gb.pkl"
 model_rf="model_rforest.pkl"
 model_lrg="model_lrg.pkl"
