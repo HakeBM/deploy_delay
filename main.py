@@ -50,7 +50,7 @@ def predict_batch(file: UploadFile = File(...)):
 
     df = pd.read_csv(file.file)
 
-    if not REQUIRED_COLUMNS.issubset(df.columns):
+    if not req_colum.issubset(df.columns):
         raise HTTPException(
             400,
             f"El archivo debe contener las columnas: {req_colum}"
