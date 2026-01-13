@@ -40,7 +40,7 @@ def predict_delay(flight : FlightInput):
 }
 @app.post ("/batch-predict")
 def predict_batch (file: UploadFile=File(...)):
-  if not file.filename.endswith(".csv")
+  if not file.filename.endswith(".csv"):
     raise HTTPException (400,"El archivo debe ser csv")
   df=pd.read_csv(file.file)
 
