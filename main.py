@@ -6,7 +6,7 @@ from typing import List, Dict, Any
 import io 
 import logging
 from contextlib import asynccontextmanager
-from schemas import FlightInput,PredictionFlight, BatchResponse
+from schemas import FlightInput
 
 model_in_use = "predictor_delay.pkl"
 THRESHOLD =0.4
