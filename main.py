@@ -9,6 +9,10 @@ from contextlib import asynccontextmanager
 from schemas import FlightInput
 
 model_in_use = "predictor_delay.pkl"
+model_xgb= "predictor_delay_xgb.pkl"
+model_gb= "model_gb.pkl"
+model_rf="model_rforest.pkl"
+model_lrg="model_lrg.pkl"
 THRESHOLD = 0.4
 req_colum = {
     "airline", "destination", "origin",
@@ -21,7 +25,7 @@ app = FastAPI(
     version="0.0.1"
 )
 
-model = joblib.load(model_in_use)
+model = joblib.load(model_xgb)
 
 @app.get("/")
 def home():
