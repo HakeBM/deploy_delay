@@ -44,7 +44,7 @@ def predict_batch (file: UploadFile=File(...)):
     raise HTTPException (400,"El archivo debe ser csv")
   df=pd.read_csv(file.file)
 
-  if not req_colum,isssubset(df.columns):
+  if not req_colum.isssubset(df.columns):
     raise HTTPException (
       400, f"El archivo debe contener las columas: {req_colum}"
     )
