@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 import logging
 import joblib
 import pandas as pd
-from app.schemas import FlightInput
+from schemas import FlightInput
 
 MODEL_PATH = "predictor_delay.pkl"
 THRESHOLD = 0.4
