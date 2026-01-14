@@ -62,7 +62,7 @@ def validate_dataframe(df: pd.DataFrame) -> None:
     if df.empty:
         raise HTTPException(400, "El archivo CSV está vacío")
 
-    if df[REQUIRED_COLUMNS].isnull().any().any():
+    if df[list(REQUIRED_COLUMNS)].isnull().any().any():
         raise HTTPException(400, "Existen valores nulos en el archivo")
 
     for col in NUMERIC_COLUMNS:
